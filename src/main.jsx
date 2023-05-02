@@ -10,6 +10,7 @@ import {
 import Main from './components/Main.jsx';
 import Recipe from './components/Recipe.jsx';
 import RecipeDetails from './components/RecipeDetails.jsx';
+import ErrorPage from './components/ErrorPage.jsx';
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
     loader: ({params})=> fetch(`http://localhost:5000/recipe/${params.id}`),
    
   },
+  {
+    path: '*',
+    element: <ErrorPage></ErrorPage>
+  }
 ]);
 
 

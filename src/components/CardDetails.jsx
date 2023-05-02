@@ -10,7 +10,7 @@ const CardDetails = ({card}) => {
 
     const handleToast = ()=>{
        
-            toast("dufghdgwrhuhrg8ugwrh8ugf8urqwiq9f8iqe49rew8qufe8u !");
+            toast("wow This recipe is my favourite one!!!");
         
     }
     return (
