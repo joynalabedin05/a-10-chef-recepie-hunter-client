@@ -4,7 +4,7 @@ import { Navbar } from 'react-bootstrap';
 const Footer = () => {
     return (
         <div className='bg-dark'>
-           <div className='container text-white py-5 d-flex justify-content-between gap-5'>
+           <div className='container text-white pt-5 d-flex justify-content-between gap-5'>
                 <div>
                     <h3>About Us</h3>
                     <div>
@@ -17,11 +17,11 @@ const Footer = () => {
                 <div>
                     <h3>Important Links</h3>
                     <div className='mt-3'>
-                        <a className='text-decoration-none' href='#'>Home</a> <br />
-                        <a className='text-decoration-none' href='#'>Team</a> <br />
-                        <a className='text-decoration-none' href='#'>Contact</a> <br />
-                        <a className='text-decoration-none' href='#'>Blogs</a> <br />
-                        <a className='text-decoration-none' href='#'>Login</a>
+                        <a className='text-decoration-none text-warning' href='#'>Home</a> <br />
+                        <a className='text-decoration-none text-warning' href='#'>Team</a> <br />
+                        <a className='text-decoration-none text-warning' href='#'>Contact</a> <br />
+                        <a className='text-decoration-none text-warning' href='#'>Blogs</a> <br />
+                        <a className='text-decoration-none text-warning' href='#'>Login</a>
                     </div>
                 </div>
                 <div>
@@ -42,9 +42,9 @@ const Footer = () => {
                 </div>
                 
            </div>
-           <div className='container text-white pb-5'>
+           <div className='container text-white pt-4 pb-5'>
             <hr />
-            <h5 className='text-center'>Copyrights @2023 All rights reserved Developed By <span className='text-warning'>Spicy-Aroma</span></h5>
+            <h5 className='text-center mt-4'>Copyrights @2023 All rights reserved Developed By <span className='text-warning'>Spicy-Aroma</span></h5>
            </div>
           
         </div>
