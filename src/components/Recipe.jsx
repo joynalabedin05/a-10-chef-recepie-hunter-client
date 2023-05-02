@@ -18,7 +18,7 @@ const Recipe = () => {
                 <p className='text-center mb-5'>There are a lot of world class chef we hire around the world . If you interested in our company apply here.... <button className='btn btn-primary'>see more</button></p>
                 <div className='row '>
                 {
-                    items.map(item=><ItemCard item={item}></ItemCard> )
+                    items.map(item=><ItemCard key={item.id} item={item}></ItemCard> )
                  }
                 </div>
             </div>

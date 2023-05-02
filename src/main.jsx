@@ -9,18 +9,19 @@ import {
 } from "react-router-dom";
 import Main from './components/Main.jsx';
 import Recipe from './components/Recipe.jsx';
+import RecipeDetails from './components/RecipeDetails.jsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
-    children: [
-      {
-        path: 'recipe',
-        element: <Recipe></Recipe>,
-        
-    },
-    ]
+   
+  },
+  {
+    path: "recipe/:id",
+    element: <RecipeDetails></RecipeDetails>,
+    loader: ({params})=> fetch(`http://localhost:5000/recipe/${params.id}`),
+   
   },
 ]);
 

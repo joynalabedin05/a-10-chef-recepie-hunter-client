@@ -1,7 +1,8 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 const ItemCard = ({item}) => {
-    console.log(item.chefPicture);
+    // console.log(item.chefPicture);
     const {id,chefPicture,chefName,yearsOfExperience,likes,numberOfRecipes} = item;
     return (
         <div className='col-md-4 p-3 border'>
@@ -11,7 +12,7 @@ const ItemCard = ({item}) => {
         <p>Years Of Experience: {yearsOfExperience}</p>
         <p>NumberOf Recipe: {numberOfRecipes}</p>
         <p>Likes: {likes}</p>
-        <button className='btn btn-primary'>View Recipe</button>
+        <Link className='btn btn-primary' to={`/recipe/${id}`}>View Recipe</Link> 
         </div>
         </div>
     );
