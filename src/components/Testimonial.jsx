@@ -20,7 +20,7 @@ const Testimonial = () => {
                     <p> It is traditionally used in hasty pudding, cornbread and corn chowder.</p>
                 </div>                          
                 <div className='border p-2'>
-                    <img className='w-100' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQaFyVZbPsd2cJxWVQ_YDMMnoc0_B6_P2jlDCvdRvzURIzefcc5zP983FMCLf70TtxEcY&usqp=CAU" alt="" />
+                    <img className='w-100' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1QtQGKgUhCDrwMKZmmibslbRhm3eWjMptt74qyoVAOFZ-7FloBygq_v_2phhxpW1PlYI&usqp=CAU" alt="" />
                     <h4 className='mt-3'>Williumson Terry</h4>
                     <h5 className='text-warning'>Designer</h5>
                     <p> It is traditionally used in hasty pudding, cornbread and corn chowder.</p>
