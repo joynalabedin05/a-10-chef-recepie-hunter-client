@@ -7,7 +7,7 @@ const Recipe = () => {
     // console.log(items[0]);
     
     useEffect(()=>{
-        fetch('http://localhost:5000/recipe')
+        fetch('https://a10-chef-recipe-hunter-server.vercel.app/recipe')
         .then(res=>res.json())
         .then(data=>setItems(data))
     },[])

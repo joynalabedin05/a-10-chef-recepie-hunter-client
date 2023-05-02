@@ -4,7 +4,7 @@ import { Navbar } from 'react-bootstrap';
 const Footer = () => {
     return (
         <div className='bg-dark'>
-           <div className='container text-white pt-5 d-flex justify-content-between gap-5'>
+           <div className='container text-white pt-5 d-md-flex justify-content-between gap-5'>
                 <div>
                     <h3>About Us</h3>
                     <div>

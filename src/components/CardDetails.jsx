@@ -15,16 +15,17 @@ const CardDetails = ({card}) => {
     }
     return (
        
-           <div className='container mt-5'>
+           <div className='container w-50 mt-5'>
+            
              <CardGroup>
-                <Card>                
+                <Card className=''>                
                     <Card.Body>
-                    <Card.Title>{recipeName}</Card.Title>
+                    <Card.Title>Name: {recipeName}</Card.Title>
                             {
                                 ingredients?.map(item=><ListRecipe item={item}></ListRecipe> )
                             }
                     <Card.Text>
-                        {cookingMethod}
+                      CookingMethod:  {cookingMethod}
                         <br />
                         Rating: {rating}
                     </Card.Text>
