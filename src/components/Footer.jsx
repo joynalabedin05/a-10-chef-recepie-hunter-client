@@ -1,5 +1,6 @@
 import React from 'react';
 import { Navbar } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
@@ -17,11 +18,11 @@ const Footer = () => {
                 <div>
                     <h3>Important Links</h3>
                     <div className='mt-3'>
-                        <a className='text-decoration-none text-warning' href='#'>Home</a> <br />
-                        <a className='text-decoration-none text-warning' href='#'>Team</a> <br />
-                        <a className='text-decoration-none text-warning' href='#'>Contact</a> <br />
-                        <a className='text-decoration-none text-warning' href='#'>Blogs</a> <br />
-                        <a className='text-decoration-none text-warning' href='#'>Login</a>
+                        <Link className='text-decoration-none text-warning' to='/'>Home</Link> <br />
+                        <Link className='text-decoration-none text-warning' to='/'>Team</Link> <br />
+                        <Link className='text-decoration-none text-warning' to='/'>Contact</Link> <br />
+                        <Link className='text-decoration-none text-warning' to='/blogs'>Blogs</Link> <br />
+                        <Link className='text-decoration-none text-warning' to='/login'>Login</Link>
                     </div>
                 </div>
                 <div>

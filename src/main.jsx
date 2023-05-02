@@ -1,6 +1,5 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
 import './index.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {
@@ -12,11 +11,18 @@ import Recipe from './components/Recipe.jsx';
 import RecipeDetails from './components/RecipeDetails.jsx';
 import ErrorPage from './components/ErrorPage.jsx';
 import Blogs from './components/Blogs.jsx';
+import Login from './components/Login.jsx';
+import AuthProvider from './provider/AuthProvider.jsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
+   
+  },
+  {
+    path: "login",
+    element: <Login></Login>,
    
   },
   {
@@ -38,6 +44,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-   <RouterProvider router={router} />
+   <AuthProvider>
+      <RouterProvider router={router} />
+   </AuthProvider>
   </React.StrictMode>,
 )
