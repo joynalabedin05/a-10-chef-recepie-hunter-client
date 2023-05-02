@@ -1,18 +1,21 @@
 import React, { useState } from 'react';
-import { Card, CardGroup } from 'react-bootstrap';
+
 import { useLoaderData} from 'react-router-dom';
-import {Link} from "react-router-dom";
+import CardDetails from './CardDetails';
+
 
 const RecipeDetails = () => {
     const [carts, setCarts] = useState();
     const recipeItems = useLoaderData();
     const {id,chefPicture,chefName,yearsOfExperience,shortBio,likes,recipes,numberOfRecipes} = recipeItems;
+    console.log(recipes);
 
-    const {recipeName,ingredients, cookingMethod,rating} = recipes;
+
     // console.log(recipeItems.likes);
     
+    
     return (
-        <div className='bg-light'>
+        <div className='bg-light mb-5'>
             <div className='container d-flex gap-5 pt-5'>
                 <img className='rounded-1' src={chefPicture} alt="" />
                 <div>
@@ -23,49 +26,12 @@ const RecipeDetails = () => {
                     <p>Likes: {likes}</p>
                 </div>
             </div>
-            <div className='container mt-5'>
-            <CardGroup>
-                <Card>                
-                    <Card.Body>
-                    <Card.Title>{recipeName}</Card.Title>
-                    <Card.Text>
-                        {cookingMethod}
-                        <br />
-                        Rating: {rating}
-                    </Card.Text>
-                    </Card.Body>
-                    <Card.Footer>
-                        <Link className='text-decoration-none'>Favourite button</Link>
-                    </Card.Footer>                                  
-                </Card>
-                <Card>                  
-                    <Card.Body>
-                    <Card.Title>{recipeName}</Card.Title>
-                    <Card.Text>
-                        {cookingMethod}
-                        <br />
-                        Rating: {rating}
-                    </Card.Text>
-                    </Card.Body>
-                    <Card.Footer>
-                        <Link className='text-decoration-none'>Favourite button</Link>
-                    </Card.Footer>                                      
-                </Card>
-                <Card>                
-                   <Card.Body>
-                    <Card.Title>{recipeName}</Card.Title>
-                    <Card.Text>
-                        {cookingMethod}
-                        <br />
-                        Rating: {rating}
-                    </Card.Text>
-                    </Card.Body>
-                    <Card.Footer>
-                        <Link className='text-decoration-none'>Favourite button</Link>
-                    </Card.Footer>                
-                </Card>
-            </CardGroup>
-            </div>
+            
+                {
+                    recipes.map(card => <CardDetails card={card} key={card.id}></CardDetails>)
+                }
+                
+           
         </div>
     );
 };
