@@ -2,8 +2,8 @@ import React from 'react';
 
 const Contact = () => {
     return (
-       <div className='bg-light mb-5'>
-         <div className='container'>
+       <div className='bg-light '>
+         <div className='container pb-5'>
              <h1 className='text-center'><span className='text-warning fs-2'>Contact Us</span> <br /> Our Store Location </h1>
              <p className='text-center'>Corn, historically the main crop grown by Native American tribes in New England, continues to be grown in all New England states.</p>
              <div className=' w-50 d-flex gap-4 mt-5'>
