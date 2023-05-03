@@ -3,9 +3,11 @@ import { GithubAuthProvider, GoogleAuthProvider,getAuth, signInWithPopup, signOu
 import app from '../firebase/firebase.config';
 import { Button, Container, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { AuthContex } from '../provider/AuthProvider';
 
 const Login = () => {
     const [user, setUser] = useState('');
+    const {signIn} = useContext(AuthContex);
     const auth = getAuth(app);
     const googleProvider = new GoogleAuthProvider();
     const githubProvider = new GithubAuthProvider();
@@ -42,8 +44,21 @@ const Login = () => {
         })
     }
 
-    const handleLogin =()=>{
+    const handleLogin =(event)=>{
+        event.preventDefault();
+        const form = event.target;      
+        const email = form.email.value;        
+        const password = form.password.value;
+        console.log(email,password);
 
+        signIn(email,password)
+        .then(result=>{
+            const loggedinUser = result.user;
+            console.log(loggedinUser);
+        })
+        .catch(error=>{
+            console.log(error);
+        })
     }
     return (
        <div>
