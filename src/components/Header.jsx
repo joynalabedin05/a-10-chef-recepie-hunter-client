@@ -5,6 +5,7 @@ import { AuthContex } from '../provider/AuthProvider';
 
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Tooltip from 'react-bootstrap/Tooltip';
+import ActiveLink from './ActiveLink/ActiveLink';
 
 const Header = () => {
     const {user,logOut} = useContext(AuthContex);
@@ -22,9 +23,9 @@ const Header = () => {
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ms-auto">
-                        <Link className='text-decoration-none px-3' to="/">Home</Link>
-                        <Link className='text-decoration-none' to="/">Spicy-Aroma</Link>
-                        <Link className='text-decoration-none px-3' to="/blogs">Blogs</Link>
+                       <ActiveLink to='/'><span className='p-2'>Home</span></ActiveLink>
+                       <ActiveLink to='/register'><span className='p-2'>Spicy-Aroma</span></ActiveLink>
+                        <ActiveLink className='text-decoration-none px-3' to="/blogs"><span className='p-2'>Blogs</span></ActiveLink>
 
                         <OverlayTrigger overlay={<Tooltip id="tooltip-disabled">{user?.displayName}</Tooltip>}>
                             <span className="d-inline-block">
@@ -36,7 +37,7 @@ const Header = () => {
 
                         {user?  
                         <Button onClick={handleLogOut} variant="secondary">logout</Button>:
-                        <Link to='/login'><Button variant="secondary">Login</Button></Link>
+                        <ActiveLink to='/login'><Button className='p-2' variant="secondary">Login</Button></ActiveLink>
                         }
                     
                     </Nav>
