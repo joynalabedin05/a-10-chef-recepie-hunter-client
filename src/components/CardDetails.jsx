@@ -27,7 +27,7 @@ const CardDetails = ({card}) => {
                     <Card.Title>Name: {recipeName}</Card.Title>
                     <span className='fs-5'>How to make items:</span>
                             {
-                                ingredients?.map(item=><ListRecipe item={item}></ListRecipe> )
+                                ingredients?.map((item,i)=><ListRecipe item={item} key={i}></ListRecipe> )
                             }
                     <Card.Text>
                       <span className='fs-5 me-3'>CookingMethod:</span>  {cookingMethod}

@@ -10,7 +10,7 @@ const RecipeDetails = () => {
     const [carts, setCarts] = useState();
     const recipeItems = useLoaderData();
     const {id,chefPicture,chefName,yearsOfExperience,shortBio,likes,recipes,numberOfRecipes} = recipeItems;
-    // console.log(recipes);
+    // console.log(recipes[0].id);
 
 
     // console.log(recipeItems.likes);
