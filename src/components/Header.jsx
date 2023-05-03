@@ -3,6 +3,9 @@ import { Button, Container, Nav, Navbar } from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 import { AuthContex } from '../provider/AuthProvider';
 
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
+import Tooltip from 'react-bootstrap/Tooltip';
+
 const Header = () => {
     const {user,logOut} = useContext(AuthContex);
     const handleLogOut = ()=>{
@@ -23,17 +26,19 @@ const Header = () => {
                         <Link className='text-decoration-none' to="/">Spicy-Aroma</Link>
                         <Link className='text-decoration-none px-3' to="/blogs">Blogs</Link>
 
-                        {user &&  <div>                      
-                        <img style={{width:'30px'}} className=' me-2' src={user?.photoURL} alt="" />
-                        <span className=''>{user?.displayName}</span>
-                        </div> }
+                        <OverlayTrigger overlay={<Tooltip id="tooltip-disabled">{user?.displayName}</Tooltip>}>
+                            <span className="d-inline-block">
+                               {
+                                user &&  <img style={{width:'30px'}} className=' me-2' src={user?.photoURL} alt="" />
+                               }
+                            </span>
+                        </OverlayTrigger>                    
 
                         {user?  
                         <Button onClick={handleLogOut} variant="secondary">logout</Button>:
                         <Link to='/login'><Button variant="secondary">Login</Button></Link>
                         }
-                       
-                        {/* <Link className='text-decoration-none px-3' to="/login">Login</Link>                     */}
+                    
                     </Nav>
                     </Navbar.Collapse>
                 </Container>
