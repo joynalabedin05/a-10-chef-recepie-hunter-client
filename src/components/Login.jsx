@@ -2,15 +2,22 @@ import React, { useContext, useState } from 'react';
 import { GithubAuthProvider, GoogleAuthProvider,getAuth, signInWithPopup, signOut } from "firebase/auth"
 import app from '../firebase/firebase.config';
 import { Button, Container, Form } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContex } from '../provider/AuthProvider';
 
 const Login = () => {
     const [user, setUser] = useState('');
     const {signIn} = useContext(AuthContex);
+   
     const auth = getAuth(app);
     const googleProvider = new GoogleAuthProvider();
     const githubProvider = new GithubAuthProvider();
+
+    const navigate  = useNavigate();
+    const location = useLocation();
+    // console.log(location);
+    const from = location.state?.from?.pathname|| '/';
+
     const handleGoogleSignin =()=>{
         signInWithPopup(auth,googleProvider)
         .then(result=>{
@@ -49,12 +56,13 @@ const Login = () => {
         const form = event.target;      
         const email = form.email.value;        
         const password = form.password.value;
-        console.log(email,password);
+        // console.log(email,password);
 
         signIn(email,password)
         .then(result=>{
             const loggedinUser = result.user;
             console.log(loggedinUser);
+            navigate(from, {replace: true});
         })
         .catch(error=>{
             console.log(error);
