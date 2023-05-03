@@ -19,8 +19,7 @@ const Footer = () => {
                     <h3>Important Links</h3>
                     <div className='mt-3'>
                         <Link className='text-decoration-none text-warning' to='/'>Home</Link> <br />
-                        <Link className='text-decoration-none text-warning' to='/'>Team</Link> <br />
-                        <Link className='text-decoration-none text-warning' to='/'>Contact</Link> <br />
+                        <Link className='text-decoration-none text-warning' to='/'>Spicy-aroma</Link> <br />
                         <Link className='text-decoration-none text-warning' to='/blogs'>Blogs</Link> <br />
                         <Link className='text-decoration-none text-warning' to='/login'>Login</Link>
                     </div>

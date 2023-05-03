@@ -7,12 +7,12 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import Main from './components/Main.jsx';
-import Recipe from './components/Recipe.jsx';
 import RecipeDetails from './components/RecipeDetails.jsx';
 import ErrorPage from './components/ErrorPage.jsx';
 import Blogs from './components/Blogs.jsx';
 import Login from './components/Login.jsx';
 import AuthProvider from './provider/AuthProvider.jsx';
+import Register from './components/Register';
 
 const router = createBrowserRouter([
   {
@@ -23,6 +23,11 @@ const router = createBrowserRouter([
   {
     path: "login",
     element: <Login></Login>,
+   
+  },
+  {
+    path: "register",
+    element: <Register></Register>,
    
   },
   {

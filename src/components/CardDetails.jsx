@@ -7,10 +7,14 @@ import { ToastContainer, toast } from 'react-toastify';
 const CardDetails = ({card}) => {
     
     const {recipeName,ingredients, cookingMethod,rating} = card;
+    const [accepted,setaccepted] =useState(true);
 
     const handleToast = ()=>{
-       
-            toast("wow This recipe is my favourite one!!!");
+
+        setaccepted(false);
+        // console.log(event.bubbles);
+        toast("wow This recipe is my favourite one!!!")
+                 
         
     }
     return (
@@ -31,7 +35,7 @@ const CardDetails = ({card}) => {
                     </Card.Text>
                     </Card.Body>
                     <Card.Footer>
-                        <Link onClick={handleToast} className='text-decoration-none'>Favourite button</Link>
+                       <button onClick={handleToast} disabled={!accepted}>Favourite button</button>
                         <ToastContainer />
                     </Card.Footer>                                  
                 </Card>            
