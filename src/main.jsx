@@ -13,6 +13,7 @@ import Blogs from './components/Blogs.jsx';
 import Login from './components/Login.jsx';
 import AuthProvider from './provider/AuthProvider.jsx';
 import Register from './components/Register';
+import PrivateRoute from './components/PrivateRoute';
 
 const router = createBrowserRouter([
   {
@@ -32,7 +33,7 @@ const router = createBrowserRouter([
   },
   {
     path: "recipe/:id",
-    element: <RecipeDetails></RecipeDetails>,
+    element: <PrivateRoute><RecipeDetails></RecipeDetails></PrivateRoute>,
     loader: ({params})=> fetch(`https://a10-chef-recipe-hunter-server.vercel.app/recipe/${params.id}`),
    
   },
