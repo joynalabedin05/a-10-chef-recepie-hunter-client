@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { Button, Container, Nav, Navbar } from 'react-bootstrap';
-import {Link} from 'react-router-dom';
+import {Link, Navigate} from 'react-router-dom';
 import { AuthContex } from '../provider/AuthProvider';
 
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
@@ -12,7 +12,9 @@ const Header = () => {
     const handleLogOut = ()=>{
         logOut()
         .then()
-        .catch(error=>console.log(error))
+        .catch(error=>console.log(error));
+        <Navigate to='/'></Navigate>
+        
     };
     return (
         <div className=''>         

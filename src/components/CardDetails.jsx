@@ -22,20 +22,21 @@ const CardDetails = ({card}) => {
            <div className='container w-50 mt-5'>
             
              <CardGroup>
-                <Card className=''>                
+                <Card className='p-3'>                
                     <Card.Body>
                     <Card.Title>Name: {recipeName}</Card.Title>
+                    <span className='fs-5'>How to make items:</span>
                             {
                                 ingredients?.map(item=><ListRecipe item={item}></ListRecipe> )
                             }
                     <Card.Text>
-                      CookingMethod:  {cookingMethod}
-                        <br />
-                        Rating: {rating}
+                      <span className='fs-5 me-3'>CookingMethod:</span>  {cookingMethod}
+                        <br /> <br />
+                        <span className='fs-5'>Rating:   {rating}</span>
                     </Card.Text>
                     </Card.Body>
                     <Card.Footer>
-                       <button onClick={handleToast} disabled={!accepted}>Favourite button</button>
+                       <button className='btn btn-success' onClick={handleToast} disabled={!accepted}>Favourite button</button>
                         <ToastContainer />
                     </Card.Footer>                                  
                 </Card>            
